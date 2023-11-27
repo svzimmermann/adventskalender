@@ -1,0 +1,91 @@
+ * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+ }
+
+ body {
+     background-image: radial-gradient(midnightblue, blue, midnightblue);
+     height: 100vh;
+ }
+
+ .calendar {
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     grid-auto-rows: minmax(10px, auto);
+     padding: 2%;
+ }
+
+ .header, .door {
+     display: flex;
+     flex-flow: wrap row;
+     background-image: linear-gradient(green, darkgreen);
+     border: 1px solid black;
+     border-radius: 5px;
+ }
+
+ .header{
+     grid-column: 1/4;
+     justify-content: center;
+     align-items: center;
+     min-height: 10vh;
+     text-align: center;
+     font-size: 7vh;
+     font-weight: bold;
+     padding: 0.5%;
+
+ }
+
+ .door {
+     min-height: 20vh;
+     min-width: 30vw;
+     padding: 10%;
+     font-size: 6vh;
+     &:not(.clicked):hover {
+         background-image: linear-gradient(limegreen, darkgreen);
+     }
+ }
+
+ .clicked {
+     font-size: 9.5vh;
+ }
+
+
+ /* W600+ */
+ @media screen and (min-width: 600px) {
+     .calendar {
+        grid-template-columns: repeat(4, 1fr);
+     }
+     .header {
+         grid-column: 1/5;
+     }
+     .door {
+         min-width: 22vw;
+     }
+ }
+
+ /* W800+ */
+ @media screen and (min-width: 800px) {
+     .calendar {
+         grid-template-columns: repeat(5, 1fr);
+     }
+     .header {
+         grid-column: 1/6;
+     }
+     .door {
+         min-width: 18vw;
+     }
+ }
+
+ /* W1000+ */
+ @media screen and (min-width: 1000px) {
+     .calendar {
+         grid-template-columns: repeat(6, 1fr);
+     }
+     .header {
+         grid-column: 1/7;
+     }
+     .door {
+         min-width: 15vw;
+     }
+ }
