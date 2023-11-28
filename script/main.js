@@ -289,20 +289,17 @@ class Door {
             }
         }
         if (orderIsSatisfied) {
-
             let now = new Date;
             let minDay = new Date();
 
-            //TODO: REMOVE!
-
-            // Test
-            now.setMonth(11);
-            now.setDate(25);
+            // Change the current date here if you want to
+            // e.g. to the 6th of December
+            // now.setMonth(11);
+            // now.setDate(6);
 
             if (openPrevious) {
                 now.setDate(now.getDate() - 1);
             }
-
             minDay.setMonth(11);
             minDay.setDate(doorId);
             if (now >= minDay) {
